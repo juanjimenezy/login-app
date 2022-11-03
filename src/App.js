@@ -8,45 +8,21 @@ import Register from './components/Register';
 import Home from './components/Home';
 import Detalle from './components/CrudComponent/detalle';
 
-import {  createBrowserRouter,  RouterProvider} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 
 function App() {
 
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <>
-              <Header/>
-              <Home/>
-              </>
-    },
-    {
-      path: "/Login",
-      element: <>
-                <Header/>
-                <Login/>
-                </>
-    },
-    {
-      path: "/Register",
-      element: <>
-                <Header/>
-                <Register/>
-                </>
-    },
-    {
-      path: "/Crud",
-      element: <>
-                <Header/>
-                <Detalle/>
-                </>
-    }
-  ]);
-
   return (
     <>
-    <RouterProvider router={router} />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<><Header /><Home /></>}></Route>
+          <Route path="/Login" element={<><Header /><Login /></>}></Route>
+          <Route path="/Register" element={<><Header /><Register /></>}></Route>
+          <Route path="/Crud" element={<><Header /><Detalle /></>}></Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
