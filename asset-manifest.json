@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.e6d2ce15.css",
-    "main.js": "/static/js/main.efcf46ad.js",
-    "static/media/bootstrap-icons.woff?": "/static/media/bootstrap-icons.e559bf06bc84fd9525e6.woff",
-    "static/media/bootstrap-icons.woff2?": "/static/media/bootstrap-icons.ea98e12d2d58747f9fc5.woff2",
-    "index.html": "/index.html",
-    "main.e6d2ce15.css.map": "/static/css/main.e6d2ce15.css.map",
-    "main.efcf46ad.js.map": "/static/js/main.efcf46ad.js.map"
+    "main.css": "/login-app/static/css/main.7bb1872d.css",
+    "main.js": "/login-app/static/js/main.c78498cd.js",
+    "static/media/bootstrap-icons.woff?": "/login-app/static/media/bootstrap-icons.e559bf06bc84fd9525e6.woff",
+    "static/media/bootstrap-icons.woff2?": "/login-app/static/media/bootstrap-icons.ea98e12d2d58747f9fc5.woff2",
+    "index.html": "/login-app/index.html",
+    "main.7bb1872d.css.map": "/login-app/static/css/main.7bb1872d.css.map",
+    "main.c78498cd.js.map": "/login-app/static/js/main.c78498cd.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6d2ce15.css",
-    "static/js/main.efcf46ad.js"
+    "static/css/main.7bb1872d.css",
+    "static/js/main.c78498cd.js"
   ]
 }
