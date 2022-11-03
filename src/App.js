@@ -6,6 +6,8 @@ import Header from './components/Header';
 import Login from './components/Login';
 import Register from './components/Register';
 import Home from './components/Home';
+import Detalle from './components/CrudComponent/detalle';
+
 import {  createBrowserRouter,  RouterProvider} from "react-router-dom";
 
 
@@ -31,6 +33,13 @@ function App() {
       element: <>
                 <Header/>
                 <Register/>
+                </>
+    },
+    {
+      path: "/Crud",
+      element: <>
+                <Header/>
+                <Detalle/>
                 </>
     }
   ]);

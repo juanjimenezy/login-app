@@ -1,7 +1,13 @@
 import React from 'react';
 import { Card, CardHeader, CardBody, FormGroup, Button } from "reactstrap";
+import {app} from "../firebaseConfig";
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+import { useNavigate } from "react-router-dom";
 
 function Register() {
+
+    const authentication = getAuth();
+    const navigate = useNavigate();
 
     const [registro, setRegistro] = React.useState({email: "", password: ""});
 
@@ -12,8 +18,19 @@ function Register() {
         });
     };
 
-    const registrar = () => {
+    const registrar = async () => {
         console.log(registro.email);
+        try {
+            await createUserWithEmailAndPassword(authentication, registro.email, registro.password).then((response) => {
+                console.log(response);
+                navigate("/Login");
+            });
+            
+        } catch (error) {
+            window.alert("error:" + error.message);
+
+        }
+        
     }
 
 
