@@ -1,7 +1,7 @@
 import React from 'react';
 // import users from '../assets/img/users.png'
 import { Card, CardHeader, CardBody, FormGroup, Button } from "reactstrap";
-import { app } from "../firebaseConfig";
+// import Fire from "../firebaseConfig";
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from "react-router-dom";
 

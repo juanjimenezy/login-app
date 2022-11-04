@@ -5,7 +5,6 @@ import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from "react-router-dom";
 
 function Register() {
-
     const authentication = getAuth();
     const navigate = useNavigate();
 
@@ -19,7 +18,7 @@ function Register() {
     };
 
     const registrar = async () => {
-        console.log(registro.email);
+        console.log(app);
         try {
             await createUserWithEmailAndPassword(authentication, registro.email, registro.password).then((response) => {
                 console.log(response);
