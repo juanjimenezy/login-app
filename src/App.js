@@ -15,7 +15,7 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter Basename="/login-app">
         <Routes>
           <Route path="/" element={<><Header /><Home /></>}></Route>
           <Route path="/Login" element={<><Header /><Login /></>}></Route>
