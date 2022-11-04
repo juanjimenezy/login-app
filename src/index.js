@@ -6,10 +6,10 @@ import { BrowserRouter, HashRouter } from 'react-router-dom';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <HashRouter>
-      <BrowserRouter >
+    <BrowserRouter >
+      <HashRouter >
         <App />
-      </BrowserRouter >
-    </HashRouter>
+      </HashRouter>
+    </BrowserRouter >
   </React.StrictMode>
 );
