@@ -15,12 +15,12 @@ function App() {
 
   return (
     <>
-      <BrowserRouter Basename="/login-app">
+      <BrowserRouter Basename="/">
         <Routes>
-          <Route path="/" element={<><Header /><Home /></>}></Route>
-          <Route path="/Login" element={<><Header /><Login /></>}></Route>
-          <Route path="/Register" element={<><Header /><Register /></>}></Route>
-          <Route path="/Crud" element={<><Header /><Detalle /></>}></Route>
+          <Route path="/" element={<><Header /><Home /></>}>a</Route>
+          <Route path="/Login" element={<><Header /><Login /></>}>b</Route>
+          <Route path="/Register" element={<><Header /><Register />c</>}>c</Route>
+          <Route path="/Crud" element={<><Header /><Detalle /></>}>d</Route>
         </Routes>
       </BrowserRouter>
     </>
