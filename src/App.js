@@ -8,21 +8,19 @@ import Register from './components/Register';
 import Home from './components/Home';
 import Detalle from './components/CrudComponent/detalle';
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 
 
 function App() {
 
   return (
     <>
-      <BrowserRouter Basename="/">
         <Routes>
           <Route path="/" element={<><Header /><Home /></>}>a</Route>
           <Route path="/Login" element={<><Header /><Login /></>}>b</Route>
           <Route path="/Register" element={<><Header /><Register />c</>}>c</Route>
           <Route path="/Crud" element={<><Header /><Detalle /></>}>d</Route>
         </Routes>
-      </BrowserRouter>
     </>
   );
 }
