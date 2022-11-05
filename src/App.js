@@ -8,7 +8,7 @@ import Register from './components/Register';
 import Home from './components/Home';
 import Detalle from './components/CrudComponent/detalle';
 
-import {Route,Routes} from "react-router-dom";
+import {Route,Routes,Switch} from "react-router-dom";
 
 // const router = createBrowserRouter([
 //   {
