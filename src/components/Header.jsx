@@ -22,6 +22,7 @@ function Header(args) {
                             <NavLink href="/Login" style={{display: login.isLogged===true?"none":"block"}}>Login</NavLink>
                             <NavLink href="/Register" style={{display: login.isLogged===true?"none":"block"}}>Register</NavLink>
                             <NavLink href="/Crud" style={{display: login.isLogged===false?"none":"block"}}>Formulario</NavLink>
+                            <NavLink href="/" style={{display: login.isLogged===false?"none":"block"}}>Salir</NavLink>
                         </NavItem>
                     </Nav>
                 </Collapse>

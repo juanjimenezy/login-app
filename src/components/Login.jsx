@@ -14,7 +14,6 @@ function Login() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  //const [login, setLogin] = React.useState({isLogged: false, usuario: "",token: "" });
   const [registro, setRegistro] = React.useState({ email: "", password: "" });
 
   const loginFireBase = async () => {
@@ -22,9 +21,7 @@ function Login() {
     try {
       await signInWithEmailAndPassword(authentication, registro.email, registro.password).then(
         (response) => {
-          //console.log(response._tokenResponse);
-          //setLogin({isLogged: true, usuario: response._tokenResponse.email,token: response._tokenResponse.idToken });
-          dispatch(addLogin({id: response._tokenResponse.kind, isLogged: true, usuario: response._tokenResponse.email,token:  response._tokenResponse.idToken}));
+          dispatch(addLogin({isLogged: true, usuario: response._tokenResponse.email,token:  response._tokenResponse.idToken}));
           navigate("/Crud");
         }
       );
