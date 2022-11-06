@@ -4,22 +4,30 @@ import { Card, CardHeader, CardBody, FormGroup, Button } from "reactstrap";
 // import Fire from "../firebaseConfig";
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addLogin } from '../features/loginSlice';
 
 
 function Login() {
 
   const authentication = getAuth();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
+  //const [login, setLogin] = React.useState({isLogged: false, usuario: "",token: "" });
   const [registro, setRegistro] = React.useState({ email: "", password: "" });
 
   const loginFireBase = async () => {
     console.log('login');
     try {
-      await signInWithEmailAndPassword(authentication, registro.email, registro.password).then((response) => {
-        console.log(response);
-        navigate("/Crud");
-      });
+      await signInWithEmailAndPassword(authentication, registro.email, registro.password).then(
+        (response) => {
+          //console.log(response._tokenResponse);
+          //setLogin({isLogged: true, usuario: response._tokenResponse.email,token: response._tokenResponse.idToken });
+          dispatch(addLogin({id: response._tokenResponse.kind, isLogged: true, usuario: response._tokenResponse.email,token:  response._tokenResponse.idToken}));
+          navigate("/Crud");
+        }
+      );
     } catch (error){
       window.alert("error:" + error.message);
     }
