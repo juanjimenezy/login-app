@@ -17,7 +17,6 @@ function Login() {
   const [registro, setRegistro] = React.useState({ email: "", password: "" });
 
   const loginFireBase = async () => {
-    console.log('login');
     try {
       await signInWithEmailAndPassword(authentication, registro.email, registro.password).then(
         (response) => {
