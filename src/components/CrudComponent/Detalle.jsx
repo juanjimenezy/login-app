@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Table, Button } from "reactstrap";
 import { useSelector } from "react-redux";
 
-
+ 
 
 function Detalle() {
     const registros = useSelector((state) => state.registros);
