@@ -1,6 +1,6 @@
 import React from 'react';
 // import users from '../assets/img/users.png'
-import { Card, CardHeader, CardBody, FormGroup, Button } from "reactstrap";
+import { Card, CardHeader, CardBody,Form, FormGroup, Button } from "reactstrap";
 // import Fire from "../firebaseConfig";
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from "react-router-dom";
@@ -20,11 +20,11 @@ function Login() {
     try {
       await signInWithEmailAndPassword(authentication, registro.email, registro.password).then(
         (response) => {
-          dispatch(addLogin({isLogged: true, usuario: response._tokenResponse.email,token:  response._tokenResponse.idToken}));
+          dispatch(addLogin({ isLogged: true, usuario: response._tokenResponse.email, token: response._tokenResponse.idToken }));
           navigate("/Crud");
         }
       );
-    } catch (error){
+    } catch (error) {
       window.alert("error:" + error.message);
     }
 
@@ -46,21 +46,22 @@ function Login() {
           </CardHeader>
 
           <CardBody>
-            <FormGroup>
-              <input type="text" className="form-control" name='email' placeholder='email' value={registro.email} onChange={handleChange} />
-            </FormGroup>
+            <Form>
+              <FormGroup>
+                <input type="text" className="form-control" name='email' placeholder='email' value={registro.email} onChange={handleChange} />
+              </FormGroup>
 
-            <FormGroup>
-              <input type="password" className="form-control" name='password' placeholder='password' value={registro.password} onChange={handleChange} />
-            </FormGroup>
-            <div className='text-center'>
-              <Button color='success' onClick={() => loginFireBase()}>Ingresar</Button>
-            </div>
+              <FormGroup>
+                <input type="password" className="form-control" name='password' placeholder='password' value={registro.password} onChange={handleChange} />
+              </FormGroup>
+              <div className='text-center'>
+                <Button color='success' onClick={() => loginFireBase()}>Ingresar</Button>
+              </div>
 
-            <div className='text-center'>
-              <a className='my-1 btn btn-primary' href='/Register' >Registrarse</a>
-            </div>
-
+              <div className='text-center'>
+                <a className='my-1 btn btn-primary' href='/Register' >Registrarse</a>
+              </div>
+            </Form>
           </CardBody>
         </Card>
       </div>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useSelector } from "react-redux";
+//import { useSelector } from "react-redux";
 import {Collapse,Navbar,NavbarToggler,NavbarBrand,Nav,NavItem,NavLink,NavbarText// UncontrolledDropdown,// DropdownToggle,// DropdownMenu,// DropdownItem
 } from 'reactstrap';
 
@@ -15,7 +15,7 @@ function Header(args) {
     }
 
     const [isOpen, setIsOpen] = useState(false);
-    const login = useSelector((state) => state.login);
+    //const login = useSelector((state) => state.login);
     const toggle = () => setIsOpen(!isOpen);
 
     const logout = () => {
@@ -27,16 +27,16 @@ function Header(args) {
         <div>
             <Navbar {...args} color="dark" dark>
                 <NavbarBrand href="/" className="me-auto">Login-app</NavbarBrand>
-                <NavbarText>Bienvenido {email}</NavbarText>
                 <NavbarToggler onClick={toggle} className="me-2"/>
                 <Collapse isOpen={isOpen} navbar>
+                
                     <Nav className="me-auto" navbar>
-
+                    <NavbarText style={{color: 'aquamarine',textAlign: 'center'}}>Bienvenido {email}</NavbarText>
                         <NavItem active={false}>
-                            <NavLink href="/Login" style={{display: login.isLogged===true?"none":"block"}}>Login</NavLink>
-                            <NavLink href="/Register" style={{display: login.isLogged===true?"none":"block"}}>Register</NavLink>
-                            <NavLink href="/Crud" style={{display: login.isLogged===false?"none":"block"}}>Formulario</NavLink>
-                            <NavLink href="/" style={{display: email===null?"none":"block"}} onClick={() => logout()}>Salir</NavLink>
+                            <NavLink href="/Login" style={{display: email!==null?"none":"block"}}>Login</NavLink>
+                            <NavLink href="/Register" style={{display: email!==null?"none":"block"}}>Register</NavLink>
+                            <NavLink href="/Crud" style={{display: email===null?"none":"block"}}>Formulario</NavLink>
+                            <NavLink href="/" style={{display: email===null?"none":"block", color: "indianred"}} onClick={() => logout()}>Salir</NavLink>
                         </NavItem>
                     </Nav>
                 </Collapse>
