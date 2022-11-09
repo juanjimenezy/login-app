@@ -7,7 +7,7 @@ import Register from './components/Register';
 import Home from './components/Home';
 import Detalle from './components/CrudComponent/Detalle';
 
-import {Route,Routes} from "react-router-dom";
+import {Route,Routes,Navigate } from "react-router-dom";
 import {getAuth} from 'firebase/auth';
 
 // const router = createBrowserRouter([
@@ -32,9 +32,8 @@ import {getAuth} from 'firebase/auth';
 
 function App() {
 
-  const auth = getAuth();
-  const user = auth.currentUser;
-  console.log(user);
+  
+  //console.log(user);
 
   return (
     <>
@@ -42,10 +41,21 @@ function App() {
           <Route path="/" element={<><Header/>  <Home/></>}></Route>
           <Route path="/Login" element={<><Header/>  <Login/></>}></Route>
           <Route path="/Register" element={<><Header/>  <Register/></>}></Route>
-          <Route path="/Crud" element={<><Header/>  <Detalle /></>}></Route>
+          <Route path="/Crud" element={<PrivateRoute><Header/>  <Detalle /></PrivateRoute>}></Route>
+          
         </Routes>
     </>
   );
+
+
+  function PrivateRoute({ children }){
+    const auth = getAuth();
+    const user = auth.currentUser;
+    console.log(user);
+    return user ? children : <Navigate to="/Login" />;
+  }
+
+
 }
 
 export default App;
